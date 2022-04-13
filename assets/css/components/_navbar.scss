@@ -1,0 +1,44 @@
+.navbar {
+    width: 100%;
+    background-color: $accentColor;
+    padding-left: 30px;
+    padding-right: 10px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $sans;
+
+    @include boxshadow;
+
+}
+
+.logo {
+    display: inline-block;
+    svg {
+        width: 175px;
+        vertical-align: middle;
+        color: aliceblue;
+    }
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    a {
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: $textColor;
+    }
+
+    &:hover {
+        background-color: $mainColor;
+
+        a {
+            color: $textColor;
+        }
+    }
+}

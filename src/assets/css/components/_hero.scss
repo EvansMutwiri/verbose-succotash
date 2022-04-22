@@ -4,9 +4,9 @@
     top: 50%;
     left: 25%;
     transform: translate(-50%, -50%);
+    color: navy;
     
     @include fonts;
-    color: rgb(217, 217, 217);
 
     a {
         margin-top: 90%;

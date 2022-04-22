@@ -1,6 +1,6 @@
 .navbar {
     width: 100%;
-    background-color: $accentColor;
+    background-color: $mainColor;
     padding-left: 30px;
     padding-right: 10px;
     position: fixed;
@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     font-family: $sans;
+    z-index: 100;
 
     @include boxshadow;
 
@@ -18,7 +19,6 @@
     svg {
         width: 175px;
         vertical-align: middle;
-        color: aliceblue;
     }
 }
 .nav-links {
@@ -35,7 +35,7 @@
     }
 
     &:hover {
-        background-color: $mainColor;
+        background-color: $accentColor;
 
         a {
             color: $textColor;

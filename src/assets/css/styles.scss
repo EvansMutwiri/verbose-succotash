@@ -16,42 +16,49 @@
     height: $containerHeight;
     @include grid(2, 1);
 
-    
+
 }
 
 .section {
     height: $containerHeight;
     scroll-snap-align: start;
-    
+
 }
 
 #home {
-    background-color: $accentColor;
+    background-color: rgb(217, 217, 217);
     padding: 8%;
+    height: $containerHeight;
+    overflow: hidden;
 }
 
 .projects {
-    @include grid(12, 3); // 12 columns, 10 rows
+    @include grid(12, 4);
     padding: 8%;
     background-color: $mainColor;
     grid-gap: 1em;
     overflow: scroll;
+    height: $containerHeight;
+
     &__block {
-        font-size: 64px;
+        font-size: 48px;
         font-weight: bold;
         height: 250px;
         text-align: center;
         grid-column-end: span 6;
         transition: all .5s ease;
         @include boxshadow;
+
         &:nth-child(odd) {
             background-color: cornflowerblue;
             color: navy;
         }
+
         &:nth-child(even) {
             background-color: navy;
             color: cornflowerblue;
         }
+
         img:hover {
             transform: scale(1.1);
         }
@@ -62,16 +69,22 @@
     .logo {
         display: none;
     }
+
     h2 {
         text-align: center;
     }
 
     .container-all {
         scroll-snap-type: y mandatory;
-        // overflow-y: auto;
+        overflow-y: auto;
         // height: $containerHeight;
         @include grid(1, 2);
     }
+    #home {
+
+        z-index: -100;
+    }
+
     .hero-text {
         text-align: center;
         position: absolute;
@@ -79,6 +92,42 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: white;
-      }
+        color: $textColor;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 480px) {
+        .projects {
+            @include grid(1, 4);
+            padding: 8%;
+            background-color: $mainColor;
+            grid-gap: 1em;
+            overflow: scroll;
+            height: $containerHeight;
+
+            &__block {
+                font-size: 64px;
+                font-weight: bold;
+                height: fit-content;
+                // text-align: center;
+                grid-column-end: span 6;
+                transition: all .5s ease;
+                @include boxshadow;
+
+                &:nth-child(odd) {
+                    background-color: cornflowerblue;
+                    color: navy;
+                }
+
+                &:nth-child(even) {
+                    background-color: navy;
+                    color: cornflowerblue;
+                }
+
+                img:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
 }
